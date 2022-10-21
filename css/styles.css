@@ -1,3 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body * {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
 table, th, td, tr {
     border: solid 1px;
+    
+    
+}
+
+
+header {
+    width: 90%;
+    margin: 10px auto;
+    background-color: grey;
+    max-width: 650px;
+    padding: 18px;
+    border-radius: 16px;
+    display: grid;
+}
+
+header * {
+    margin: auto;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 32px auto;
+    display: grid;
+    gap: 20px;
+}
+
+.calcDiv, .errorConsole  {
+    width: 90%;
+    margin: auto;
+    background-color: grey;
+    padding: 26px;
+    border-radius: 16px;
+    display: grid;
+    gap: 20px;
+}
+
+.calcDiv * { 
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+} 
+
+.errorConsole  {
+    width: 850px;
+}
+
+.errorConsole * {
+    margin: auto;
+}
+
+.calcDiv input, .calcDiv select {
+    background-color:rgb(255, 255, 231);
+}
+
+#errorMessage {
+    color: red;
 }
