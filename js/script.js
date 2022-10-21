@@ -1,25 +1,43 @@
 
 function calc() {
-    var num1 = Number(document.querySelector("#num1").value);
-    var num2 = Number(document.querySelector("#num2").value);
-    var op = document.querySelector("#select").value;
+    var num1 = Number(document.querySelector("#num1").value.replace(",","."));;
+    var num2 = Number(document.querySelector("#num2").value.replace(",","."));;
+    var operator = document.querySelector("#select").value;
     var result;
-    switch (op) {
-        case 'add':
+
+    
+
+    switch (operator) {
+        case 'addition':
             result = num1 + num2; 
         break;
-        case 'sub':
+        case 'subtraction':
             result = num1 - num2;  
         break;
-        case 'mult':
+        case 'multiplication':
             result = num1 * num2; 
         break;
-        case 'div':
-            result = num1 / num2; 
+        case 'division':
+            if(num2 == 0) {
+                document.getElementById("errorMessage").innerHTML = 'Valor do divisor não pode ser igual a 0.';
+                return;
+            }
+
+            else {
+                result = num1 / num2; 
+            }
+            
         break;     
     }
-    document.getElementById("result").innerHTML = result;
-    console.log(num1);
-    console.log(num2);
-    console.log(result);
+    if(isNaN(result) == true) {
+        document.getElementById("errorMessage").innerHTML = 'ERRO: Um dos valores inseridos não é um número. Verifique os valores e tente novamente.';
+        
+    }
+
+    else {
+        document.getElementById("result").innerHTML = result;
+        document.getElementById("errorMessage").innerHTML = '';
+    }
+    
+
 }

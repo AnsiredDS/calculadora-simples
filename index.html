@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="./js/script.js"> </script>
     <title>Calculadora</title>
@@ -11,10 +14,12 @@
 <body>
     <header>
         <h1> Calculadora Simples </h1>
+        
+        <p> Digite 2 números e escolha uma operação para ser realizada entre eles. </p>
     </header>
     <main>
-        <p> Digite 2 números e escolha uma operação para ser realizada entre eles. </p>
-        <div>
+        
+        <div class="calcDiv">
             <table>
                 <tr>
                     <th> Número 1 </th>
@@ -26,16 +31,20 @@
                     <td><input type="text" id="num1"></td>
                     <td><select name="" id="select">
                         <option disabled>Selecione...</option>
-                        <option value="add">Adição (+)</option>
-                        <option value="sub">Subtração (-)</option>
-                        <option value="mult">Multiplicação (x)</option>
-                        <option value="div">Divisão (÷)</option>
+                        <option value="addition">Adição (+)</option>
+                        <option value="subtraction">Subtração (-)</option>
+                        <option value="multiplication">Multiplicação (x)</option>
+                        <option value="division">Divisão (÷)</option>
                     </select> </td>
                     <td><input type="text" id="num2"></td>          
                     <td> <strong id="result"> </strong> </td>
                 </tr>
             </table>
             <button id="send" onclick="calc()"> Enviar </button>
+        </div>
+
+        <div class="errorConsole"> 
+            <p> <strong>Console de Erros <div id="errorMessage"> </div> </strong> </p>
         </div>
          
     </main>
